@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>Account Details</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/accountDetails.js"></script>
+</head>
+
+<body id="accountDetailsPage">
+
+    <!--HEADER-->
+    <nav class="navbar navbar-inverse mainMenu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button id="btnOpenMenu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" id="createPost" class="navbar-toggle" data-target="#myNavbar" aria-expanded="false"><span class="glyphicon glyphicon-plus" style="color:white"></span></button>
+                <a class="navbar-brand" href="#" id="brijHome">Brij</a>
+            </div>
+        </div>
+        <div class="collapse" aria-expanded="false" id="myNavbar">
+            <ul id="navbar" class="nav navbar-nav">
+            </ul>
+        </div>
+    </nav>
+    <!--END OF HEADER -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="updatePasswordModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Enter New Password</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="updatePasswordModalBody"></div>
+                    <input type="password" class="form-control" id="password1" placeholder="Enter new Password" />
+                    <br />
+                    <input type="password" class="form-control" id="password2" placeholder="Re-Enter new Password" />
+                </div>
+                <div class="modal-footer">
+                    <button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button id="btnSave" type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container pageDiv scrollableArea">
+        <div class="page-header text-center">
+            <h1>Account Details <small><br><span id="username"></span></small></h1>
+        </div>
+        <div class="text-center margin-bottom-5">
+            <div class="col-xs-6 margin-bottom-5">
+                <h4>Poster Rating</h4>
+                <div id="posterRatingDiv">
+                    <div class="starDiv">
+                    </div>
+                    <div class="ratingInfo"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 margin-bottom-5">
+                <h4>Requestor Rating</h4>
+                <div id="userRatingDiv">
+                    <div class="starDiv">
+                    </div>
+                    <div class="ratingInfo"></div>
+                </div>
+            </div>
+
+        </div>
+        <form class="form-horizontal" id="userForm">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="firstName">First Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control userInput" id="firstName" placeholder="first Name" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control userInput" id="lastName" placeholder="Last Name" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="phoneNumber">Phone #:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control userInput" id="phoneNumber" placeholder="Phone Number" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="address">Address:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control userInput" id="address" placeholder="Address" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="city">City:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control userInput" id="city" placeholder="City" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="lstProvinces">Province:</label>
+                <div class="col-sm-10">
+                    <select disabled class="form-control userInput" id="lstProvinces"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control userInput" id="email" placeholder="name@domain.com" disabled>
+                </div>
+            </div>
+            <div class="form-group" id="primaryButtons">
+                <div class="col-sm-12 ">
+                    <button id="btnEdit" class="btn btn-primary form-control margin-bottom-5">Edit</button>
+                    <button id="btnUpdatePassword" class="btn btn-info form-control hide margin-bottom-5">Update Password</button>
+                    <button id="btnCancel" type="submit" class="btn btn-default form-control hide margin-bottom-5">Cancel</button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        app.initialize()
+    </script>
+
+</body>
+
+</html>

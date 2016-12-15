@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Postings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/postings.js"></script>
+</head>
+
+<body>
+    <!--HEADER-->
+    <nav class="navbar navbar-inverse mainMenu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button id="btnOpenMenu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" id="createPost" class="navbar-toggle" data-target="#myNavbar" aria-expanded="false"><span class="glyphicon glyphicon-plus" style="color:white"></span></button>
+                <a class="navbar-brand" href="#" id="brijHome">Brij</a>
+            </div>
+        </div>
+        <div class="collapse" aria-expanded="false" id="myNavbar">
+            <ul id="navbar" class="nav navbar-nav">
+            </ul>
+        </div>
+    </nav>
+    <!--END OF HEADER -->
+    <div class="page-header" id="titleDiv">
+        <center>
+            <h1>Posts</h1>
+        </center>
+    </div>
+    <form>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <div id="imaginary_container">
+                        <div class="input-group stylish-input-group">
+                            <input type="text" class="form-control" placeholder="Search" id="txtSearch" onkeyup="checkNull()">
+                            <span class="input-group-addon">
+                            <button type="submit" id="btnSearch">
+                            <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container filterDiv" style="">
+                <div class="col-sm-3">
+                    <center>
+                        <label>
+                            Search
+                            <br> Radius(KM):
+                        </label>
+                    </center>
+                </div>
+                  <div class="col-sm-4 col-xs-6">
+                        <input name='txtKm' class='form-control' type='number' min='1' id='txtKm' style="text-align:center"/>
+                    </div>
+                    <div class="col-sm-3 col-xs-5">
+                        <button type='button' class='btn btn-info glyphicon glyphicon-globe' id='btnSaveSetting'> Filter</button>
+                    </div>                
+                
+  
+            </div>
+            <div class="row" style="margin-top:10px;">
+
+            </div>
+        </div>
+    </form>
+    <br />
+    <div id="postingDiv" class="scrollableArea">
+        <div id="postingList" class="list-group">
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
